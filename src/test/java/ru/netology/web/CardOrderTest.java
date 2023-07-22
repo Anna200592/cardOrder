@@ -1,5 +1,6 @@
-package ru.netology.web;
+ackage ru.netology.web;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,8 +19,8 @@ class CallbackTest<list> {
     private WebDriver driver;
 
     @BeforeAll // хук, который запускает драйвер
-    static void setUpAll(){
-        System.setProperty("webdriver.chrome.driver","driver/win/chromedriver.exe");
+    public static void setupAll() {
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach // Выполняет действия до выполнения теста
